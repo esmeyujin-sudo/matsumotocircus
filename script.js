@@ -63,30 +63,6 @@
     reveals.forEach((el) => el.classList.add("visible"));
   }
 
-  /* ---------- Countdown to Tokyo opening night ---------- */
-  const target = new Date("2026-09-19T18:00:00+09:00").getTime();
-  const cd = {
-    d: document.getElementById("cdDays"),
-    h: document.getElementById("cdHours"),
-    m: document.getElementById("cdMins"),
-    s: document.getElementById("cdSecs"),
-  };
-  const pad = (n) => String(n).padStart(2, "0");
-  function tick() {
-    if (!cd.d) return;
-    let diff = Math.max(0, target - Date.now());
-    const day = Math.floor(diff / 86400000); diff -= day * 86400000;
-    const hr = Math.floor(diff / 3600000); diff -= hr * 3600000;
-    const min = Math.floor(diff / 60000); diff -= min * 60000;
-    const sec = Math.floor(diff / 1000);
-    cd.d.textContent = day;
-    cd.h.textContent = pad(hr);
-    cd.m.textContent = pad(min);
-    cd.s.textContent = pad(sec);
-  }
-  tick();
-  setInterval(tick, 1000);
-
   /* ---------- Gallery: build SVG poster tiles + lightbox ---------- */
   const scenes = [
     { t: "空中の舞", cls: "tall", svg: sceneAerial() },
@@ -96,7 +72,7 @@
     { t: "道化師の登場", cls: "", svg: sceneClown() },
     { t: "気球の旅", cls: "tall", svg: sceneBalloon() },
     { t: "綱渡りの緊張", cls: "", svg: sceneRope() },
-    { t: "満員の喝采", cls: "", svg: sceneCrowd() },
+    { t: "カーテンコール", cls: "", svg: sceneCrowd() },
   ];
   const grid = document.getElementById("galleryGrid");
   if (grid) {
@@ -136,59 +112,6 @@
   }
   lb.addEventListener("click", (e) => { if (e.target === lb || e.target.classList.contains("lightbox-close")) closeLightbox(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
-
-  /* ---------- Contact form (demo) ---------- */
-  const form = document.getElementById("contactForm");
-  const formMsg = document.getElementById("formMsg");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      if (!name || !email) {
-        formMsg.style.color = "var(--crimson)";
-        formMsg.textContent = "お名前とメールアドレスをご入力ください。";
-        return;
-      }
-      formMsg.style.color = "var(--teal)";
-      formMsg.textContent = "送信ありがとうございます！折り返しご連絡いたします。";
-      form.reset();
-      setTimeout(() => (formMsg.textContent = ""), 6000);
-    });
-  }
-
-  /* ---------- Welcome / next-show modal ---------- */
-  const modal = document.getElementById("showModal");
-  if (modal) {
-    const closeModal = () => {
-      modal.classList.remove("open");
-      document.body.style.overflow = "";
-      setTimeout(() => { modal.hidden = true; }, 350);
-    };
-    const openModal = () => {
-      modal.hidden = false;
-      void modal.offsetHeight; // reflow so the entrance transition plays
-      modal.classList.add("open");
-      document.body.style.overflow = "hidden";
-    };
-    document.getElementById("modalClose").addEventListener("click", closeModal);
-    modal.querySelectorAll("[data-close]").forEach((el) => el.addEventListener("click", closeModal));
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) closeModal(); });
-
-    // "View shows in my city" → close the modal, then let the anchor jump to the schedule
-    const cityBtn = document.getElementById("modalCity");
-    if (cityBtn) cityBtn.addEventListener("click", closeModal);
-
-    // days remaining until the Tokyo opening night
-    const modalDays = document.getElementById("modalDays");
-    if (modalDays) {
-      const d = Math.max(0, Math.floor((new Date("2026-09-19T18:00:00+09:00").getTime() - Date.now()) / 86400000));
-      modalDays.textContent = d;
-    }
-
-    // open shortly after the page loads
-    window.setTimeout(openModal, 500);
-  }
 
   /* =========================================================
      SVG scene builders — self-contained circus illustrations
