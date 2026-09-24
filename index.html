@@ -1,172 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="松本達彦 幻想サーカス団 公式情報サイト。座長紹介、演目、2026年全国ツアーの公演日程・会場情報をご案内しています。" />
-<title>松本達彦 幻想サーカス団｜MATSUMOTO FANTASY CIRCUS</title>
+<meta name="description" content="松本サーカス 夜の公演 ― 羽根と仮面、灯りと影。月あかりの下で静かに進む、幻想的な舞台のご案内です。" />
+<title>松本サーカス｜夜の幻想</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Shippori+Mincho+B1:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Cinzel:wght@500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 
-<!-- ============ NAVIGATION ============ -->
+<!-- Marks the document while scripting is available. The fade-in effect is
+     applied only under this class, so the text stays visible if JS never runs. -->
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
 <header class="site-header" id="header">
   <div class="nav-inner">
-    <a href="#hero" class="brand" aria-label="松本達彦 幻想サーカス団 ホーム">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="34" height="34">
-          <path d="M20 3 L24 15 L37 15 L26 23 L30 36 L20 28 L10 36 L14 23 L3 15 L16 15 Z" fill="currentColor"/>
-        </svg>
-      </span>
-      <span class="brand-text">
-        <span class="brand-jp">幻想サーカス団</span>
-        <span class="brand-en">MATSUMOTO CIRCUS</span>
-      </span>
+    <a href="#top" class="brand">
+      <span class="brand-jp">松本サーカス</span>
+      <span class="brand-en">Night Program</span>
     </a>
 
-    <nav class="nav-links" id="navLinks" aria-label="メインナビゲーション">
-      <a href="#about">座長紹介</a>
+    <nav class="nav-links" id="navLinks" aria-label="目次">
+      <a href="#world">世界観</a>
       <a href="#acts">演目</a>
-      <a href="#schedule">公演日程</a>
-      <a href="#info">公演情報</a>
-      <a href="#gallery">ギャラリー</a>
-      <a href="#access">お問い合わせ</a>
+      <a href="#gallery">情景</a>
+      <a href="#guide">ご案内</a>
+      <a href="#contact">お問い合わせ</a>
     </nav>
 
-    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+    <button class="nav-toggle" id="navToggle" aria-label="目次を開く" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
-<main>
+<main id="top">
   <!-- ============ HERO ============ -->
-  <section class="hero" id="hero">
-    <div class="hero-sky" aria-hidden="true">
-      <div class="stars" id="stars"></div>
-      <div class="moon"></div>
-      <div class="spotlight spotlight--left"></div>
-      <div class="spotlight spotlight--right"></div>
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="kicker">Matsumoto Circus &mdash; Night Program</p>
+        <h1 class="hero-title">
+          <span class="hero-title-main">夜の幻想</span>
+          <span class="hero-title-sub">月あかりの舞台</span>
+        </h1>
+        <p class="hero-lead">
+          灯りが落ちる。羽根が揺れる。<br />
+          夜だけの、もうひとつの舞台。
+        </p>
+        <p class="hero-desc">
+          羽扇の舞、宙を舞う絹、仮面の下のまなざし。
+          華やかさと静けさが隣り合う、一夜かぎりの幻想舞台。
+        </p>
+      </div>
 
-      <!-- Big top tent illustration -->
-      <svg class="hero-tent" viewBox="0 0 900 420" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
-        <defs>
-          <linearGradient id="tentRed" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#e23b4e"/>
-            <stop offset="1" stop-color="#a3172b"/>
-          </linearGradient>
-          <linearGradient id="tentCream" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#fff6e2"/>
-            <stop offset="1" stop-color="#f2dcae"/>
-          </linearGradient>
-        </defs>
-        <!-- roof stripes -->
-        <path d="M450 20 L470 150 L430 150 Z" fill="url(#tentRed)"/>
-        <path d="M450 20 L560 155 L470 150 Z" fill="url(#tentCream)"/>
-        <path d="M450 20 L340 155 L430 150 Z" fill="url(#tentCream)"/>
-        <path d="M450 20 L560 155 L680 160 Z" fill="url(#tentRed)"/>
-        <path d="M450 20 L340 155 L220 160 Z" fill="url(#tentRed)"/>
-        <path d="M450 20 L680 160 L800 180 Z" fill="url(#tentCream)"/>
-        <path d="M450 20 L220 160 L100 180 Z" fill="url(#tentCream)"/>
-        <!-- scalloped valance -->
-        <path d="M100 180 Q160 210 220 180 Q280 210 340 182 Q400 208 460 182 Q520 208 580 182 Q640 210 700 180 Q760 208 800 180 L800 200 Q400 235 100 200 Z" fill="url(#tentRed)"/>
-        <!-- body -->
-        <path d="M150 200 L180 400 L720 400 L750 200 Q450 232 150 200 Z" fill="url(#tentCream)"/>
-        <path d="M330 214 L330 400 L360 400 L370 212 Z" fill="url(#tentRed)" opacity=".85"/>
-        <path d="M530 214 L570 400 L600 400 L570 212 Z" fill="url(#tentRed)" opacity=".85"/>
-        <!-- entrance -->
-        <path d="M405 400 L410 300 Q450 275 490 300 L495 400 Z" fill="#4a1020"/>
-        <path d="M405 400 L410 300 Q430 288 450 300 L450 400 Z" fill="#611326"/>
-        <!-- flag -->
-        <rect x="447" y="6" width="6" height="26" fill="#f4c95d"/>
-        <path d="M453 8 L487 16 L453 24 Z" fill="#e23b4e"/>
-        <circle cx="450" cy="20" r="3" fill="#f4c95d"/>
-      </svg>
-    </div>
-
-    <div class="hero-content">
-      <p class="hero-kicker">2026 全国ツアー</p>
-      <h1 class="hero-title">
-        <span class="hero-title-sub">松本達彦</span>
-        <span class="hero-title-main">幻想サーカス</span>
-      </h1>
-      <p class="hero-lead">夜空に舞う、驚異と魔法の舞台。</p>
-      <p class="hero-desc">
-        空中の舞、炎のダンス、笑いと涙。<br />
-        座長・松本達彦が率いるサーカス団の<br />
-        演目と公演情報をご紹介します。
-      </p>
-      <div class="hero-actions">
-        <a href="#about" class="btn btn--primary">サーカス団について</a>
-        <a href="#schedule" class="btn btn--ghost">公演日程</a>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 260 300" class="ill">
+          <!-- moon -->
+          <circle cx="188" cy="62" r="40" class="s-fill-gold"/>
+          <circle cx="174" cy="52" r="40" class="s-fill-ink"/>
+          <!-- aerial hoop -->
+          <line x1="96" y1="0" x2="96" y2="96" class="s-line-thin"/>
+          <circle cx="96" cy="150" r="54" class="s-line"/>
+          <!-- elegant figure seated in the hoop -->
+          <g class="s-line">
+            <circle cx="96" cy="120" r="9"/>
+            <path d="M96 129 q10 20 2 38"/>
+            <path d="M98 167 q22 8 40 -6"/>
+            <path d="M98 167 q16 18 34 22"/>
+            <path d="M98 140 q-24 6 -32 -14"/>
+            <path d="M98 140 q22 4 34 -10"/>
+          </g>
+          <!-- drape -->
+          <path d="M20 300 q40 -70 20 -130" class="s-line-thin"/>
+          <path d="M240 300 q-40 -70 -20 -130" class="s-line-thin"/>
+          <g class="s-dots">
+            <circle cx="40" cy="60" r="1.8"/><circle cx="220" cy="140" r="1.6"/>
+            <circle cx="60" cy="232" r="1.6"/><circle cx="210" cy="230" r="1.8"/>
+          </g>
+        </svg>
       </div>
     </div>
 
-    <a href="#about" class="scroll-cue" aria-label="下へスクロール">
-      <span></span>
+    <a href="#world" class="scroll-cue" aria-label="読み進める">
+      <span class="scroll-cue-line"></span>
+      <span class="scroll-cue-text">夜へ</span>
     </a>
   </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="about section" id="about">
-    <div class="section-inner about-grid">
-      <div class="about-visual reveal">
-        <div class="portrait">
-          <svg viewBox="0 0 320 400" width="100%" aria-label="座長・松本達彦のイラスト">
-            <defs>
-              <radialGradient id="pBg" cx="50%" cy="35%" r="75%">
-                <stop offset="0" stop-color="#3a2350"/>
-                <stop offset="1" stop-color="#1a1030"/>
-              </radialGradient>
-            </defs>
-            <rect width="320" height="400" fill="url(#pBg)"/>
-            <circle cx="160" cy="150" r="95" fill="#f4c95d" opacity=".12"/>
-            <!-- top hat -->
-            <rect x="112" y="66" width="96" height="60" rx="6" fill="#241733"/>
-            <rect x="92" y="120" width="136" height="14" rx="7" fill="#241733"/>
-            <rect x="112" y="112" width="96" height="12" fill="#a3172b"/>
-            <!-- face -->
-            <circle cx="160" cy="176" r="46" fill="#f3d3b3"/>
-            <!-- moustache -->
-            <path d="M138 196 Q160 208 182 196 Q170 204 160 202 Q150 204 138 196 Z" fill="#3a2a20"/>
-            <!-- eyes -->
-            <circle cx="146" cy="172" r="4" fill="#241733"/>
-            <circle cx="174" cy="172" r="4" fill="#241733"/>
-            <!-- collar / coat -->
-            <path d="M96 400 Q100 280 160 250 Q220 280 224 400 Z" fill="#a3172b"/>
-            <path d="M160 250 L160 400" stroke="#f4c95d" stroke-width="3" stroke-dasharray="2 10"/>
-            <path d="M148 262 L172 262 L160 300 Z" fill="#fff6e2"/>
-            <!-- bowtie -->
-            <path d="M160 254 L142 246 L142 262 Z" fill="#f4c95d"/>
-            <path d="M160 254 L178 246 L178 262 Z" fill="#f4c95d"/>
-            <circle cx="160" cy="254" r="4" fill="#e23b4e"/>
-          </svg>
-          <span class="portrait-badge">RINGMASTER</span>
-        </div>
-      </div>
-
-      <div class="about-body reveal">
-        <p class="eyebrow">座長紹介 &mdash; RINGMASTER</p>
-        <h2 class="section-title">松本 達彦<span class="section-title-en">Tatsuhiko Matsumoto</span></h2>
+  <!-- ============ WORLD ============ -->
+  <section class="world section" id="world">
+    <div class="section-inner world-inner">
+      <div class="world-body reveal">
+        <p class="kicker">世界観 &mdash; The World</p>
+        <h2 class="section-title">昼のサーカスは、<br />夜、別の顔になる。</h2>
         <p class="lede">
-          幼き日に見上げたテントの灯りに魅せられ、20歳で単身ヨーロッパへ。
-          各地のサーカス団で研鑽を積み、日本の伝統芸能と西洋のスペクタクルを
-          融合させた独自の舞台を追い求めてきた。
+          天幕に灯がともるころ、舞台はゆっくりと表情を変えます。
+          明るい歓声のかわりに、低い弦の音。紙吹雪のかわりに、羽根と影。
         </p>
         <p>
-          2005年の帰国後「幻想サーカス団」を旗揚げ。以来、国内外で
-          <strong>500公演以上</strong>を重ね、老若男女すべての観客を夢の世界へと誘う。
+          夜の公演は、松本サーカスがもうひとつの表情として育ててきた演目です。
+          凝った衣裳、絹と羽根、蝋燭のような照明。
+          派手さではなく、美しさで魅せることを信条としています。
         </p>
-        <blockquote class="quote">
-          「サーカスは、大人が子どもに戻れる唯一の場所。<br />
-          今夜だけは、日常を忘れてください。」
-          <cite>&mdash; 座長 松本達彦</cite>
-        </blockquote>
-        <ul class="credentials">
-          <li><strong>1985</strong>兵庫県生まれ</li>
-          <li><strong>2005</strong>幻想サーカス団 旗揚げ</li>
-          <li><strong>2018</strong>国際サーカス芸術祭 金賞</li>
-        </ul>
+        <p>
+          惹きつけるのは、仕掛けではなく所作です。
+          指先の角度、視線の運び、息を置く間。
+          鍛え抜かれた身体だけがつくれる美しさを、どうぞ間近で。
+        </p>
       </div>
+
+      <figure class="world-art reveal" aria-hidden="true">
+        <svg viewBox="0 0 240 260" class="ill">
+          <!-- curtain -->
+          <path d="M20 0 q20 130 -4 260" class="s-line-thin"/>
+          <path d="M60 0 q16 130 -6 260" class="s-line-thin"/>
+          <path d="M220 0 q-20 130 4 260" class="s-line-thin"/>
+          <path d="M180 0 q-16 130 6 260" class="s-line-thin"/>
+          <!-- feather fan -->
+          <g class="s-line">
+            <path d="M120 200 L88 120 M120 200 L104 112 M120 200 L120 108 M120 200 L136 112 M120 200 L152 120"/>
+            <path d="M84 124 q36 -34 72 0" />
+            <circle cx="120" cy="204" r="5" class="s-accent"/>
+          </g>
+          <g class="s-dots"><circle cx="150" cy="60" r="1.8"/><circle cx="96" cy="48" r="1.6"/></g>
+        </svg>
+      </figure>
     </div>
   </section>
 
@@ -174,189 +141,101 @@
   <section class="acts section" id="acts">
     <div class="section-inner">
       <div class="section-head reveal">
-        <p class="eyebrow">演目 &mdash; THE ACTS</p>
-        <h2 class="section-title">舞台で繰り広げられる演目</h2>
-        <p class="section-sub">幻想サーカス団がお届けする6つの演目をご紹介します。</p>
+        <p class="kicker">演目 &mdash; The Acts</p>
+        <h2 class="section-title">夜の演目</h2>
+        <p class="section-sub">羽根、絹、仮面、炎。六つの場面で綴る、一夜の物語。</p>
       </div>
 
       <div class="acts-grid">
         <article class="act-card reveal">
-          <div class="act-icon">
-            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 v10" stroke="currentColor" stroke-width="3"/><path d="M14 16 h36" stroke="currentColor" stroke-width="3"/><path d="M18 16 a14 20 0 0 0 28 0" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="40" r="5" fill="currentColor"/><circle cx="40" cy="40" r="5" fill="currentColor"/><path d="M24 45 v12 M40 45 v12" stroke="currentColor" stroke-width="3"/></svg>
+          <div class="act-ic">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M32 54 L14 22 M32 54 L23 18 M32 54 L32 16 M32 54 L41 18 M32 54 L50 22" class="s-line"/>
+              <path d="M12 26 q20 -20 40 0" class="s-line"/>
+              <circle cx="32" cy="56" r="3" class="s-accent"/>
+            </svg>
           </div>
-          <h3>空中ブランコ</h3>
-          <p class="act-en">Aerial Trapeze</p>
-          <p>天井高くで繰り広げられる、息をのむ空中の舞。重力を忘れさせる優雅な飛翔。</p>
+          <h3>羽扇の舞</h3>
+          <p class="act-en">Feather Fan</p>
+          <p>大きな羽扇が開き、閉じる。そのたびに景色が変わる、古典的な美しさ。</p>
         </article>
 
         <article class="act-card reveal">
-          <div class="act-icon">
-            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 40 h52" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="24" r="6" fill="currentColor"/><path d="M32 30 v12 M32 34 l-10 8 M32 34 l10 8 M26 20 l-8 -6 M38 20 l8 -6" stroke="currentColor" stroke-width="3" fill="none"/></svg>
+          <div class="act-ic">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M24 4 q6 30 -2 56 M40 4 q-6 30 2 56" class="s-line"/>
+              <path d="M24 30 q8 10 16 0" class="s-line-thin"/>
+            </svg>
           </div>
-          <h3>綱渡り</h3>
-          <p class="act-en">Tightrope</p>
-          <p>一本の綱の上、緊張と美が交錯する究極の集中。会場が息を潜める瞬間。</p>
+          <h3>月下の絹</h3>
+          <p class="act-en">Aerial Silk</p>
+          <p>二枚の絹だけを頼りに、宙へ。ほどけ、巻きつき、落ちて、また昇る。</p>
         </article>
 
         <article class="act-card reveal">
-          <div class="act-icon">
-            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8 C24 20 40 24 32 36 C28 28 24 30 26 40 C20 34 18 46 24 54 C30 60 44 58 46 46 C48 36 40 34 40 26 C46 30 44 18 32 8 Z" fill="currentColor"/></svg>
+          <div class="act-ic">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M14 22 q18 -12 36 0 q2 24 -18 34 q-20 -10 -18 -34 z" class="s-line"/>
+              <path d="M22 30 q6 -5 12 0 M40 28 q4 -3 6 0" class="s-line-thin"/>
+              <path d="M32 8 l3 8 l8 1 l-6 6" class="s-line-thin"/>
+            </svg>
           </div>
-          <h3>ファイアーショー</h3>
-          <p class="act-en">Fire Show</p>
-          <p>闇夜を焦がす炎のダンス。熱と光が渦を巻く、迫力のパフォーマンス。</p>
+          <h3>仮面舞踏</h3>
+          <p class="act-en">Masquerade</p>
+          <p>顔を隠すほどに、まなざしは雄弁になる。仮面の下だけで交わされる会話。</p>
         </article>
 
         <article class="act-card reveal">
-          <div class="act-icon">
-            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="14" r="6" fill="currentColor"/><path d="M32 20 v14 M32 24 l-12 6 M32 24 l12 6 M32 34 l-8 18 M32 34 l8 18" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+          <div class="act-ic">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M32 6 C24 20 40 24 32 36 C28 28 24 30 26 40 C20 34 18 46 24 54 C30 60 44 58 46 46 C48 36 40 34 40 26 C46 30 44 18 32 6 Z" class="s-line"/>
+            </svg>
           </div>
-          <h3>アクロバット</h3>
-          <p class="act-en">Acrobatics</p>
-          <p>人間の限界に挑む、驚異の身体表現。積み重ねた鍛錬が生む奇跡のバランス。</p>
+          <h3>炎と影</h3>
+          <p class="act-en">Fire &amp; Shadow</p>
+          <p>炎がひとつ灯るたび、壁に影が生まれる。踊っているのは、どちらでしょう。</p>
         </article>
 
         <article class="act-card reveal">
-          <div class="act-icon">
-            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 40 L44 40 L40 56 L24 56 Z" fill="currentColor"/><path d="M32 8 l4 12 l12 2 l-9 8 l3 12 l-10 -7 l-10 7 l3 -12 l-9 -8 l12 -2 Z" fill="currentColor"/></svg>
+          <div class="act-ic">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M18 30 h28 v-16 h-28 z" class="s-line"/>
+              <path d="M10 30 h44" class="s-line"/>
+              <path d="M20 44 l3 7 l7 2 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -2 z" class="s-accent"/>
+              <path d="M46 40 l2 5 l5 2 l-5 2 l-2 5 l-2 -5 l-5 -2 l5 -2 z" class="s-accent"/>
+            </svg>
           </div>
-          <h3>イリュージョン</h3>
+          <h3>妖しき奇術</h3>
           <p class="act-en">Illusion</p>
-          <p>目を疑う奇跡の連続。魔法は本当に存在する &mdash; そう信じたくなる数分間。</p>
+          <p>手のひらから消えたものが、隣の席で見つかる。疑う楽しみも、夜の味わい。</p>
         </article>
 
         <article class="act-card reveal">
-          <div class="act-icon">
-            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="30" r="18" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="26" cy="27" r="3" fill="currentColor"/><circle cx="38" cy="27" r="3" fill="currentColor"/><circle cx="32" cy="34" r="4" fill="currentColor"/><path d="M24 40 a10 8 0 0 0 16 0" fill="none" stroke="currentColor" stroke-width="3"/><path d="M32 8 v6 M20 12 l3 5 M44 12 l-3 5" stroke="currentColor" stroke-width="3"/></svg>
+          <div class="act-ic">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="24" cy="14" r="5" class="s-line"/>
+              <circle cx="42" cy="16" r="5" class="s-line"/>
+              <path d="M24 19 q-6 16 2 30 M42 21 q8 14 0 28" class="s-line"/>
+              <path d="M26 30 q10 -6 16 0" class="s-line-thin"/>
+              <path d="M26 49 l-8 8 M44 49 l8 8" class="s-line"/>
+            </svg>
           </div>
-          <h3>ピエロ</h3>
-          <p class="act-en">Clown</p>
-          <p>笑いあり、涙あり。心を掴んで離さない道化師たち。子どもも大人も夢中に。</p>
+          <h3>タンゴ・ノワール</h3>
+          <p class="act-en">Tango Noir</p>
+          <p>近づいては離れる二人。触れない距離が、いちばん雄弁な場面になる。</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ SHOWCASE BANNER ============ -->
-  <section class="banner" aria-label="幻想サーカス団の舞台">
-    <div class="banner-overlay"></div>
-    <div class="section-inner banner-inner reveal">
-      <p class="banner-kicker">A NIGHT TO REMEMBER</p>
-      <h2 class="banner-title">その夜、テントの中で<br />時間が止まる。</h2>
-      <p class="banner-text">
-        照明が落ち、太鼓が鳴る。天井から降りそそぐ光の中で、
-        子どもの頃の胸の高鳴りがよみがえる &mdash; それが幻想サーカス団の舞台です。
+  <!-- ============ QUOTE BANNER ============ -->
+  <section class="banner section">
+    <div class="banner-inner reveal">
+      <p class="banner-quote">
+        「派手さは、すぐに飽きられます。<br />
+        美しさだけが、朝まで残るのです」
       </p>
-    </div>
-  </section>
-
-  <!-- ============ SCHEDULE ============ -->
-  <section class="schedule section" id="schedule">
-    <div class="section-inner">
-      <div class="section-head reveal">
-        <p class="eyebrow">公演日程 &mdash; TOUR SCHEDULE</p>
-        <h2 class="section-title">2026 全国ツアー</h2>
-        <p class="section-sub">今年は全国5都市で公演を行います。各都市の日程と会場は以下のとおりです。</p>
-      </div>
-
-      <ul class="schedule-list">
-        <li class="schedule-row reveal">
-          <div class="sr-date"><span class="sr-month">9</span><span class="sr-day">19</span><span class="sr-range">- 9/23</span></div>
-          <div class="sr-info"><h3>東京</h3><p>大井特設シアターテント</p></div>
-          <div class="sr-time"><span>開演</span>18:30</div>
-        </li>
-        <li class="schedule-row reveal">
-          <div class="sr-date"><span class="sr-month">9</span><span class="sr-day">27</span><span class="sr-range">- 9/29</span></div>
-          <div class="sr-info"><h3>名古屋</h3><p>名古屋港ガーデンふ頭 特設会場</p></div>
-          <div class="sr-time"><span>開演</span>18:00</div>
-        </li>
-        <li class="schedule-row reveal">
-          <div class="sr-date"><span class="sr-month">10</span><span class="sr-day">4</span><span class="sr-range">- 10/8</span></div>
-          <div class="sr-info"><h3>大阪</h3><p>舞洲 サマーテント</p></div>
-          <div class="sr-time"><span>開演</span>18:30</div>
-        </li>
-        <li class="schedule-row reveal">
-          <div class="sr-date"><span class="sr-month">10</span><span class="sr-day">18</span><span class="sr-range">- 10/20</span></div>
-          <div class="sr-info"><h3>福岡</h3><p>海の中道 特設会場</p></div>
-          <div class="sr-time"><span>開演</span>18:00</div>
-        </li>
-        <li class="schedule-row reveal">
-          <div class="sr-date"><span class="sr-month">11</span><span class="sr-day">1</span><span class="sr-range">- 11/3</span></div>
-          <div class="sr-info"><h3>札幌</h3><p>つどーむ 特設テント</p></div>
-          <div class="sr-time"><span>開演</span>17:00</div>
-        </li>
-      </ul>
-
-      <p class="schedule-note reveal">※ 日程・開演時間は都合により変更となる場合があります。変更がある場合は当サイトにてお知らせいたします。</p>
-    </div>
-  </section>
-
-  <!-- ============ SHOW INFORMATION ============ -->
-  <section class="info section" id="info">
-    <div class="section-inner">
-      <div class="section-head reveal">
-        <p class="eyebrow">公演情報 &mdash; SHOW INFORMATION</p>
-        <h2 class="section-title">公演について</h2>
-        <p class="section-sub">公演に関する基本情報をご案内します。</p>
-      </div>
-
-      <div class="info-grid">
-        <article class="info-card reveal">
-          <div class="info-ic"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" fill="none" stroke="currentColor" stroke-width="3"/><path d="M32 20 v13 l9 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div>
-          <h3>上演時間</h3>
-          <p>休憩をはさみ約120分を予定しています。開場は開演の30分前です。</p>
-        </article>
-
-        <article class="info-card reveal">
-          <div class="info-ic"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="12" y="16" width="40" height="36" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M12 27 h40 M22 12 v8 M42 12 v8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="38" r="2.5" fill="currentColor"/><circle cx="32" cy="38" r="2.5" fill="currentColor"/><circle cx="40" cy="38" r="2.5" fill="currentColor"/></svg></div>
-          <h3>開演時間</h3>
-          <p>各都市の開演時間は、公演日程をご覧ください。</p>
-        </article>
-
-        <article class="info-card reveal">
-          <div class="info-ic"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="23" cy="18" r="6" fill="currentColor"/><path d="M23 26 c-7 0 -10 5 -10 12 v10 h20 v-10 c0 -7 -3 -12 -10 -12 Z" fill="currentColor"/><circle cx="44" cy="24" r="5" fill="currentColor"/><path d="M44 31 c-6 0 -9 4 -9 10 v7 h18 v-7 c0 -6 -3 -10 -9 -10 Z" fill="currentColor"/></svg></div>
-          <h3>対象年齢</h3>
-          <p>3歳以上のお子様からご覧いただけます。ご家族みなさまでお楽しみいただける内容です。</p>
-        </article>
-
-        <article class="info-card reveal">
-          <div class="info-ic"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="28" cy="14" r="5" fill="currentColor"/><path d="M28 22 v13 h11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="30" cy="44" r="12" fill="none" stroke="currentColor" stroke-width="3"/><path d="M39 35 l5 13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div>
-          <h3>会場設備</h3>
-          <p>車椅子スペース・多目的トイレ・授乳室を完備しています。</p>
-        </article>
-
-        <article class="info-card reveal">
-          <div class="info-ic"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="20" width="44" height="30" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 20 l4 -6 h8 l4 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="32" cy="35" r="8" fill="none" stroke="currentColor" stroke-width="3"/></svg></div>
-          <h3>撮影について</h3>
-          <p>公演中の撮影・録音はご遠慮ください。ロビーでの記念撮影は自由です。</p>
-        </article>
-
-        <article class="info-card reveal">
-          <div class="info-ic"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8 c-10 0 -18 8 -18 18 c0 13 18 30 18 30 c0 0 18 -17 18 -30 c0 -10 -8 -18 -18 -18 Z" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="26" r="6" fill="currentColor"/></svg></div>
-          <h3>アクセス</h3>
-          <p>各会場へは公共交通機関のご利用が便利です。駐車場には限りがあります。</p>
-        </article>
-      </div>
-
-      <div class="faq reveal">
-        <h3 class="faq-title">よくあるご質問</h3>
-        <details class="faq-item">
-          <summary>雨天でも公演はありますか？</summary>
-          <p>テント内での公演のため、雨天でも実施します。荒天の場合は当サイトにてお知らせいたします。</p>
-        </details>
-        <details class="faq-item">
-          <summary>子ども連れでも楽しめますか？</summary>
-          <p>はい。3歳以上のお子様からご覧いただけます。ベビーカーは所定の場所でお預かりいたします。</p>
-        </details>
-        <details class="faq-item">
-          <summary>上演時間はどのくらいですか？</summary>
-          <p>休憩をはさみ、約120分を予定しています。開場は開演の30分前です。</p>
-        </details>
-        <details class="faq-item">
-          <summary>会場に駐車場はありますか？</summary>
-          <p>台数に限りがございます。公共交通機関のご利用をおすすめいたします。</p>
-        </details>
-      </div>
+      <p class="banner-by">&mdash; 演出・松本 達彦</p>
     </div>
   </section>
 
@@ -364,35 +243,152 @@
   <section class="gallery section" id="gallery">
     <div class="section-inner">
       <div class="section-head reveal">
-        <p class="eyebrow">ギャラリー &mdash; GALLERY</p>
-        <h2 class="section-title">舞台のひとこま</h2>
-        <p class="section-sub">幻想サーカス団の舞台の世界をイラストでご紹介します。</p>
+        <p class="kicker">情景 &mdash; Scenes</p>
+        <h2 class="section-title">夜の断章</h2>
+        <p class="section-sub">舞台に置かれた、いくつかの情景。</p>
       </div>
 
-      <div class="gallery-grid" id="galleryGrid">
-        <!-- Tiles injected by JS -->
+      <div class="gallery-grid">
+        <figure class="tile reveal">
+          <svg viewBox="0 0 220 180" aria-hidden="true">
+            <path d="M0 40 q30 24 60 0 q30 24 60 0 q30 24 60 0 q30 24 40 0" class="s-line-thin"/>
+            <path d="M24 40 q14 70 -2 140 M60 40 q12 70 -4 140 M196 40 q-14 70 2 140 M160 40 q-12 70 4 140" class="s-line-thin"/>
+            <circle cx="110" cy="96" r="26" class="s-fill-gold"/>
+            <circle cx="102" cy="90" r="26" class="s-fill-ink"/>
+          </svg>
+          <figcaption>開演前の帳</figcaption>
+        </figure>
+
+        <figure class="tile reveal">
+          <svg viewBox="0 0 220 180" aria-hidden="true">
+            <path d="M110 150 L80 74 M110 150 L95 68 M110 150 L110 64 M110 150 L125 68 M110 150 L140 74" class="s-line"/>
+            <path d="M76 80 q34 -32 68 0" class="s-line"/>
+            <circle cx="110" cy="154" r="5" class="s-accent"/>
+            <g class="s-dots"><circle cx="46" cy="44" r="1.8"/><circle cx="176" cy="52" r="1.6"/></g>
+          </svg>
+          <figcaption>羽扇、開く</figcaption>
+        </figure>
+
+        <figure class="tile reveal">
+          <svg viewBox="0 0 220 180" aria-hidden="true">
+            <path d="M70 46 q40 -26 80 0 q4 52 -40 76 q-44 -24 -40 -76 z" class="s-line"/>
+            <path d="M86 62 q12 -9 24 0 M132 58 q8 -6 12 0" class="s-line-thin"/>
+            <path d="M110 18 l4 12 l12 2 l-9 9" class="s-line-thin"/>
+            <g class="s-dots"><circle cx="40" cy="120" r="1.8"/><circle cx="182" cy="128" r="1.6"/></g>
+          </svg>
+          <figcaption>仮面、置かれたまま</figcaption>
+        </figure>
+
+        <figure class="tile reveal">
+          <svg viewBox="0 0 220 180" aria-hidden="true">
+            <path d="M84 40 h52 l-22 32 v44 h-8 v-44 z" class="s-line"/>
+            <path d="M92 134 h36" class="s-line"/>
+            <path d="M88 44 q22 14 44 0" class="s-line-thin"/>
+            <circle cx="150" cy="52" r="4" class="s-accent"/>
+            <g class="s-dots"><circle cx="56" cy="64" r="1.6"/><circle cx="174" cy="112" r="1.8"/></g>
+          </svg>
+          <figcaption>幕間のひととき</figcaption>
+        </figure>
+
+        <figure class="tile reveal">
+          <svg viewBox="0 0 220 180" aria-hidden="true">
+            <line x1="110" y1="0" x2="110" y2="42" class="s-line-thin"/>
+            <circle cx="110" cy="92" r="44" class="s-line"/>
+            <g class="s-line">
+              <circle cx="110" cy="68" r="8"/>
+              <path d="M110 76 q9 16 2 30"/>
+              <path d="M112 106 q18 6 32 -4"/>
+              <path d="M110 86 q-20 6 -26 -10"/>
+            </g>
+          </svg>
+          <figcaption>宙へ、ひとり</figcaption>
+        </figure>
+
+        <figure class="tile reveal">
+          <svg viewBox="0 0 220 180" aria-hidden="true">
+            <circle cx="88" cy="46" r="9" class="s-line"/>
+            <circle cx="132" cy="50" r="9" class="s-line"/>
+            <path d="M88 55 q-10 34 4 66 M132 59 q12 30 0 62" class="s-line"/>
+            <path d="M92 84 q20 -12 36 0" class="s-line-thin"/>
+            <path d="M92 121 l-16 18 M136 121 l16 18" class="s-line"/>
+          </svg>
+          <figcaption>二人の距離</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GUIDE ============ -->
+  <section class="guide section" id="guide">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <p class="kicker">ご案内 &mdash; Guide</p>
+        <h2 class="section-title">ご来場の前に</h2>
+        <p class="section-sub">はじめてお越しになる方へ、あらかじめお伝えしたいこと。</p>
+      </div>
+
+      <div class="guide-grid">
+        <article class="guide-card reveal">
+          <h3>静かな客席</h3>
+          <p>落ち着いた雰囲気を保つため、客席は静かにお過ごしいただける構成にしています。</p>
+        </article>
+        <article class="guide-card reveal">
+          <h3>上演内容</h3>
+          <p>衣裳と照明にこだわった、舞踊と曲芸による舞台です。音も光も、控えめに整えています。</p>
+        </article>
+        <article class="guide-card reveal">
+          <h3>上演時間</h3>
+          <p>休憩をはさみ、約100分を予定しています。開場は開演の45分前です。</p>
+        </article>
+        <article class="guide-card reveal">
+          <h3>装い</h3>
+          <p>ドレスコードはございません。少しだけよそゆきの装いで過ごす夜も、また一興です。</p>
+        </article>
+        <article class="guide-card reveal">
+          <h3>撮影について</h3>
+          <p>出演者保護のため、上演中の撮影・録音・配信はかたくお断りしております。</p>
+        </article>
+        <article class="guide-card reveal">
+          <h3>お一人でも</h3>
+          <p>おひとりさまでお越しになる方も多い公演です。カウンター席もご用意しています。</p>
+        </article>
+      </div>
+
+      <div class="faq reveal">
+        <h3 class="faq-title">よくあるご質問</h3>
+        <details class="faq-item">
+          <summary>どのような雰囲気の公演ですか？</summary>
+          <p>古典的なレヴューに近い、落ち着いた雰囲気です。過度な演出はなく、音楽と照明を抑えた上品な構成を心がけています。</p>
+        </details>
+        <details class="faq-item">
+          <summary>ひとりで行っても浮きませんか？</summary>
+          <p>おひとりでお越しの方が半数ほどを占めます。静かに観たい方のための席もございますので、お気軽にどうぞ。</p>
+        </details>
+        <details class="faq-item">
+          <summary>どのくらいの長さの公演ですか？</summary>
+          <p>休憩をはさみ、約100分を予定しています。開場は開演の45分前です。ごゆっくりお過ごしください。</p>
+        </details>
+        <details class="faq-item">
+          <summary>公演についてもっと知りたいのですが。</summary>
+          <p>公演内容や実施時期についてのお問い合わせは、下記の窓口までご連絡ください。当サイトでは販売・予約のお取り扱いはございません。</p>
+        </details>
       </div>
     </div>
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section class="access section" id="access">
-    <div class="section-inner access-inner">
-      <div class="access-info reveal">
-        <p class="eyebrow">お問い合わせ &mdash; CONTACT</p>
-        <h2 class="section-title">お問い合わせ</h2>
-        <p class="lede">サーカス団や公演内容に関するご質問は、下記までお気軽にご連絡ください。</p>
-        <dl class="contact-list">
-          <div><dt>お電話</dt><dd>03-1234-5678<span>（受付 10:00〜18:00 / 平日）</span></dd></div>
-          <div><dt>メール</dt><dd>info@matsumoto-circus.jp</dd></div>
-          <div><dt>運営</dt><dd>幻想サーカス団 事務局</dd></div>
-        </dl>
-        <div class="social">
-          <a href="#gallery" aria-label="X (旧Twitter)">X</a>
-          <a href="#gallery" aria-label="Instagram">Instagram</a>
-          <a href="#gallery" aria-label="YouTube">YouTube</a>
-        </div>
-      </div>
+  <section class="contact section" id="contact">
+    <div class="section-inner contact-inner reveal">
+      <p class="kicker">お問い合わせ &mdash; Contact</p>
+      <h2 class="section-title">夜の舞台について</h2>
+      <p class="lede">
+        公演内容・取材・ご見学に関するお問い合わせは、下記までご連絡ください。
+      </p>
+      <dl class="contact-list">
+        <div><dt>メール</dt><dd>night@matsumoto-circus.jp</dd></div>
+        <div><dt>お電話</dt><dd>03-1234-5678<span>（受付 13:00〜19:00 / 平日）</span></dd></div>
+        <div><dt>運営</dt><dd>松本サーカス 事務局</dd></div>
+      </dl>
     </div>
   </section>
 </main>
@@ -400,27 +396,56 @@
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   <div class="section-inner footer-inner">
-    <div class="footer-brand">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="30" height="30"><path d="M20 3 L24 15 L37 15 L26 23 L30 36 L20 28 L10 36 L14 23 L3 15 L16 15 Z" fill="currentColor"/></svg>
-      </span>
-      <div>
-        <p class="footer-jp">松本達彦 幻想サーカス団</p>
-        <p class="footer-en">MATSUMOTO FANTASY CIRCUS</p>
-      </div>
-    </div>
-    <nav class="footer-links" aria-label="フッターナビ">
-      <a href="#about">座長紹介</a>
-      <a href="#acts">演目</a>
-      <a href="#schedule">公演日程</a>
-      <a href="#info">公演情報</a>
-      <a href="#access">お問い合わせ</a>
-    </nav>
+    <p class="footer-name">松本サーカス <span>Night Program</span></p>
     <p class="footer-note">
-      ※ 当サイトは幻想サーカス団の活動および公演情報をご案内するための情報サイトです。当サイトでは、チケットの販売・予約・転売・仲介は一切行っておりません。<br />
-      &copy; 2026 松本達彦 幻想サーカス団 MATSUMOTO FANTASY CIRCUS. All Rights Reserved.
+      当サイトは公演内容をご紹介する情報サイトであり、チケットの販売・予約・転売・仲介は一切行っておりません。<br />
+      &copy; 2026 Matsumoto Circus
     </p>
   </div>
 </footer>
 
+<!-- ============ NEWSLETTER MODAL ============ -->
+<div class="modal" id="newsletter" role="dialog" aria-modal="true" aria-labelledby="nlTitle" hidden>
+  <div class="modal-backdrop" data-close></div>
+
+  <div class="modal-card" role="document" tabindex="-1">
+    <button type="button" class="modal-close" id="nlClose" aria-label="閉じる">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 6 L18 18 M18 6 L6 18" />
+      </svg>
+    </button>
+
+    <svg class="modal-ill" viewBox="0 0 140 84" aria-hidden="true">
+      <rect x="26" y="24" width="88" height="56" rx="2" class="s-line"/>
+      <path d="M26 24 L70 58 L114 24" class="s-line"/>
+      <path d="M26 80 L58 50 M114 80 L82 50" class="s-line-thin"/>
+      <circle cx="70" cy="12" r="5" class="s-accent"/>
+      <path d="M52 10 L60 10 M80 10 L88 10" class="s-line-thin"/>
+    </svg>
+
+    <p class="kicker">Night Letter</p>
+    <h2 class="modal-title" id="nlTitle">夜のたより</h2>
+    <p class="modal-text">
+      新しい演目のこと、稽古場の灯り、次の夜のしらせ。
+      月に一度、短いたよりをお届けします。
+    </p>
+
+    <!-- To make this live: put your newsletter provider's form URL in `action`
+         (Mailchimp, Buttondown, ConvertKit …). Until then the form does not
+         pretend to have registered anyone. -->
+    <form class="modal-form" id="nlForm" action="" method="post" novalidate>
+      <label class="sr-only" for="nlEmail">メールアドレス</label>
+      <input type="email" id="nlEmail" name="email" placeholder="you@example.com"
+             autocomplete="email" required />
+      <button type="submit" class="btn-submit">登録する</button>
+    </form>
+
+    <p class="modal-msg" id="nlMsg" role="status"></p>
+    <p class="modal-fine">いつでも配信を停止できます。</p>
+  </div>
+</div>
+
 <script src="script.js"></script>
+
+</body>
+</html>
